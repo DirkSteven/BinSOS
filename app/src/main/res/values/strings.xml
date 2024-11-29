@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BinSOS</string>
+    <string name="imagebutton_1">ImageButton 1</string>
+    <string name="imagebutton_4">ImageButton 4</string>
+</resources>

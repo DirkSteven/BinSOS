@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "982033126328",
+    "project_id": "binssos-e7998",
+    "storage_bucket": "binssos-e7998.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982033126328:android:8cf5bc9a3e9f115ebd354d",
+        "android_client_info": {
+          "package_name": "com.example.binsos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFsTjxzvhLUCky9iCGeiq2Se1QAhShpf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

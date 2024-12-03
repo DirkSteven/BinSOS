@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         // Initialize the location button
         shareLocationBtn = findViewById(R.id.shareLocationBtn);
         locationBtn = findViewById(R.id.locationBtn);
+        ImageButton firstAidBtn = findViewById(R.id.firstAidBtn);
+
 
         // Retrieve or generate a unique user ID
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -78,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        firstAidBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FirstAidActivity.class);
+            startActivity(intent);
+        });
+
         // Set up click listener for the button
         shareLocationBtn.setOnClickListener(v -> {
             // Check for permissions
@@ -93,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 fetchAndShareLocation();
             }
         });
+
+
 
         locationBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, Locations.class);

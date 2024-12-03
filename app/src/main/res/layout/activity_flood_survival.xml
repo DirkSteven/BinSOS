@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6E6F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/floodMainImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/siren"/>
+
+        <TextView
+            android:id="@+id/floodTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flood Survival Guide"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#4E3C3C"
+            android:layout_marginTop="16dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/floodDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="16dp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+</ScrollView>

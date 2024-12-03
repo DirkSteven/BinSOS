@@ -36,6 +36,18 @@
         <activity android:name=".LocationAdapter">
             <!-- You can add other configurations here if needed -->
         </activity>
+
+        <activity android:name=".FirstAidActivity">
+            <!-- You can add other configurations here if needed -->
+        </activity>
+
+        <activity android:name=".BleedingWoundsActivity" />
+        <activity android:name=".BreathingAndHeartActivity" />
+        <activity android:name=".BurnsActivity" />
+        <activity android:name=".InjuriesAndEmergenciesActivity" />
+
+
+
     </application>
 
 </manifest>

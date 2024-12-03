@@ -22,6 +22,8 @@
             android:gravity="center">
 
             <!-- Red Button 1 (top left) -->
+
+<!--            First Aid-->
             <ImageButton
                 android:id="@+id/firstAidBtn"
                 android:layout_width="match_parent"
@@ -35,6 +37,8 @@
                 android:layout_margin="12dp"/>
 
             <!-- Red Button 2 (bottom left) -->
+
+<!--            Flooding typhoon-->
             <ImageButton
                 android:id="@+id/rainBtn"
                 android:layout_width="match_parent"
@@ -56,19 +60,6 @@
             android:orientation="vertical"
             android:gravity="center">
 
-<!--            <ImageButton-->
-<!--                android:id="@+id/imageButton2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="0dp"-->
-<!--                android:layout_weight="2"-->
-<!--                android:src="@drawable/firstaid"-->
-<!--                android:contentDescription="ImageButton 2"-->
-<!--                android:background="@drawable/button_purple"-->
-<!--                android:scaleType="fitCenter"-->
-<!--                android:padding="16dp"-->
-<!--                android:layout_margin="12dp"/>-->
-
-            <!-- Purple Button 2 (bottom right) -->
             <Button
                 android:id="@+id/earthquakeBtn"
                 android:layout_width="match_parent"

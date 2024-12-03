@@ -40,6 +40,11 @@ dependencies {
     implementation("com.google.firebase:firebase-database")
     implementation ("com.google.android.gms:play-services-location:21.1.0")
 
+    implementation ("androidx.gridlayout:gridlayout:1.0.0")
+
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation ("com.google.android.material:material:1.9.0")
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

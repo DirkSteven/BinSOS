@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#f2f2f2">
+
+    <!-- ScrollView for scrolling content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/callForHelpButton"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Injuries First Aid"
+                android:textSize="28sp"
+                android:textColor="#C62828"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="#FFEBEE"
+                android:elevation="2dp"/>
+
+            <!-- Step 1 -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingLeft="16dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_bleeding"
+                    android:contentDescription="Stop the Bleeding Icon"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Assess the Injury"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:paddingStart="16dp"
+                    android:textColor="#333333"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check the severity of the injury and ensure the person is stable and not in immediate danger.
+
+"
+                android:textSize="16sp"
+                android:paddingStart="56dp"
+                android:paddingTop="8dp"
+                android:textColor="#555555"/>
+
+            <!-- Step 2 -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingLeft="16dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_clean_wound"
+                    android:contentDescription="Clean the Wound Icon"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. Control Bleeding"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:paddingStart="16dp"
+                    android:textColor="#333333"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apply pressure to the wound with a clean cloth or bandage to stop any bleeding. If necessary, elevate the injured area."
+                android:textSize="16sp"
+                android:paddingStart="56dp"
+                android:paddingTop="8dp"
+                android:textColor="#555555"/>
+
+            <!-- Step 3 -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingLeft="16dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_cover_wound"
+                    android:contentDescription="Cover the Wound Icon"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:text="3. Seek Medical Help"
+                    android:textColor="#333333"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Call emergency services if the injury is severe, if bleeding cannot be controlled, or if there are signs of shock."
+                android:textSize="16sp"
+                android:paddingStart="56dp"
+                android:paddingTop="8dp"
+                android:textColor="#555555"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Call for Help Button -->
+    <Button
+        android:id="@+id/callForHelpButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Call for Help"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_gradient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="12dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

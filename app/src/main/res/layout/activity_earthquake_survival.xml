@@ -12,18 +12,18 @@
 
         <!-- Main Image and Title -->
         <ImageView
-            android:id="@+id/floodMainImage"
+            android:id="@+id/earthquakeMainImage"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/siren"
-            android:contentDescription="Main flood survival guide image" />
+            android:src="@drawable/earthquake"
+            android:contentDescription="Main earthquake survival guide image" />
 
         <TextView
-            android:id="@+id/floodTitle"
+            android:id="@+id/earthquakeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Flood Survival Guide"
+            android:text="Earthquake Survival Guide"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#4E3C3C"
@@ -32,21 +32,21 @@
 
         <!-- Description -->
         <TextView
-            android:id="@+id/floodDescription"
+            android:id="@+id/earthquakeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Be prepared, stay safe, and survive during floods with these essential tips and techniques."
+            android:text="Learn how to prepare, stay safe, and recover during an earthquake."
             android:textSize="16sp"
             android:lineSpacingExtra="4dp"
             android:layout_marginTop="16dp"
             android:textColor="#000000" />
 
-        <!-- Section 1: Prepare Before the Flood -->
+        <!-- Section 1: Prepare Before the Earthquake -->
         <TextView
             android:id="@+id/sectionPrepareTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1. Prepare Before the Flood"
+            android:text="1. Prepare Before the Earthquake"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#4E3C3C"
@@ -57,26 +57,26 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/prepare"
-            android:contentDescription="Image for preparing before the flood" />
+            android:src="@drawable/prepare_earthquake"
+            android:contentDescription="Image for preparing before the earthquake" />
 
         <TextView
             android:id="@+id/prepareDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="• Stock up on food and water.\n• Keep emergency kits ready.\n• Know your local evacuation routes."
+            android:text="• Identify safe spots in your home.\n• Secure heavy furniture and appliances.\n• Keep emergency supplies ready."
             android:textSize="16sp"
             android:lineSpacingExtra="4dp"
             android:layout_marginTop="8dp"
             android:textColor="#000000"
             android:layout_marginBottom="16dp" />
 
-        <!-- Section 2: Stay Safe During the Flood -->
+        <!-- Section 2: Stay Safe During the Earthquake -->
         <TextView
             android:id="@+id/sectionStaySafeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2. Stay Safe During the Flood"
+            android:text="2. Stay Safe During the Earthquake"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#4E3C3C"
@@ -87,26 +87,26 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/stay_safe"
-            android:contentDescription="Image for staying safe during the flood" />
+            android:src="@drawable/stay_safe_earthquake"
+            android:contentDescription="Image for staying safe during the earthquake" />
 
         <TextView
             android:id="@+id/staySafeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="• Avoid walking or driving through floodwaters.\n• Move to higher ground immediately.\n• Follow instructions from local authorities."
+            android:text="• Drop, cover, and hold on under sturdy furniture.\n• Stay away from windows and heavy objects.\n• Avoid using elevators."
             android:textSize="16sp"
             android:lineSpacingExtra="4dp"
             android:layout_marginTop="8dp"
             android:textColor="#000000"
             android:layout_marginBottom="16dp" />
 
-        <!-- Section 3: Recover After the Flood -->
+        <!-- Section 3: Recover After the Earthquake -->
         <TextView
             android:id="@+id/sectionRecoverTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3. Recover After the Flood"
+            android:text="3. Recover After the Earthquake"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#4E3C3C"
@@ -117,14 +117,14 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/recover"
-            android:contentDescription="Image for recovering after the flood" />
+            android:src="@drawable/recover_earthquake"
+            android:contentDescription="Image for recovering after the earthquake" />
 
         <TextView
             android:id="@+id/recoverDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="• Check your home for structural damage.\n• Clean and disinfect to prevent disease.\n• Seek assistance if needed."
+            android:text="• Check for gas leaks and structural damage.\n• Stay away from damaged buildings.\n• Seek medical help if injured."
             android:textSize="16sp"
             android:lineSpacingExtra="4dp"
             android:layout_marginTop="8dp"

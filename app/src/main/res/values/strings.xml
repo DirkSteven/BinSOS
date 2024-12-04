@@ -2,4 +2,32 @@
     <string name="app_name">BinSOS</string>
     <string name="imagebutton_1">ImageButton 1</string>
     <string name="imagebutton_4">ImageButton 4</string>
+
+    <!-- Flood Survival Guide Strings -->
+    <string name="flood_guide_title">Flood Survival Guide</string>
+    <string name="flood_guide_description">Be prepared, stay safe, and recover effectively during floods with these essential tips and techniques.</string>
+    <string name="prepare_title">1. Prepare Before the Flood</string>
+    <string name="prepare_description">• Stock up on food and water.\n• Keep emergency kits ready.\n• Know your local evacuation routes.</string>
+    <string name="prepare_image_content_desc">Image for preparing before the flood</string>
+    <string name="stay_safe_title">2. Stay Safe During the Flood</string>
+    <string name="stay_safe_description">• Avoid walking or driving through floodwaters.\n• Move to higher ground immediately.\n• Follow instructions from local authorities.</string>
+    <string name="stay_safe_image_content_desc">Image for staying safe during the flood</string>
+    <string name="recover_title">3. Recover After the Flood</string>
+    <string name="recover_description">• Check your home for structural damage.\n• Clean and disinfect to prevent disease.\n• Seek assistance if needed.</string>
+    <string name="recover_image_content_desc">Image for recovering after the flood</string>
+    <string name="main_image_content_desc">Main flood survival guide image</string>
+
+    <!-- Earthquake Survival Guide Strings -->
+    <string name="earthquake_guide_title">Earthquake Survival Guide</string>
+    <string name="earthquake_guide_description">Learn how to prepare, stay safe, and recover effectively during earthquakes.</string>
+    <string name="prepare_earthquake_title">1. Prepare Before the Earthquake</string>
+    <string name="prepare_earthquake_description">• Identify safe spots in your home.\n• Secure heavy furniture and appliances.\n• Keep emergency supplies ready.</string>
+    <string name="prepare_image_content_desc_earthquake">Image for preparing before the earthquake</string>
+    <string name="stay_safe_earthquake_title">2. Stay Safe During the Earthquake</string>
+    <string name="stay_safe_earthquake_description">• Drop, cover, and hold on under sturdy furniture.\n• Stay away from windows and heavy objects.\n• Avoid using elevators.</string>
+    <string name="stay_safe_image_content_desc_earthquake">Image for staying safe during the earthquake</string>
+    <string name="recover_earthquake_title">3. Recover After the Earthquake</string>
+    <string name="recover_earthquake_description">• Check for gas leaks and structural damage.\n• Stay away from damaged buildings.\n• Seek medical help if injured.</string>
+    <string name="recover_image_content_desc_earthquake">Image for recovering after the earthquake</string>
+    <string name="main_image_content_desc_earthquake">Main earthquake survival guide image</string>
 </resources>

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "AppPrefs";
     private static final String KEY_USER_ID = "userID";
 
-    private ImageButton shareLocationBtn;
+    private ImageButton shareLocationBtn,firstAidBtn, rainBtn;
     private Button locationBtn;
     private FusedLocationProviderClient fusedLocationClient;
     private FirebaseFirestore db;
@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         // Initialize the location button
         shareLocationBtn = findViewById(R.id.shareLocationBtn);
         locationBtn = findViewById(R.id.locationBtn);
-        ImageButton firstAidBtn = findViewById(R.id.firstAidBtn);
+        firstAidBtn = findViewById(R.id.firstAidBtn);
+        rainBtn = findViewById(R.id.rainBtn);
 
 
         // Retrieve or generate a unique user ID
@@ -84,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, FirstAidActivity.class);
             startActivity(intent);
         });
+
+        rainBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FloodSurvivalActivity.class);
+            startActivity(intent);
+        });
+
+
 
         // Set up click listener for the button
         shareLocationBtn.setOnClickListener(v -> {

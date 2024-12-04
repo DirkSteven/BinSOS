@@ -1,5 +1,6 @@
 package com.example.binsos;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,78 +8,116 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
 public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.LocationViewHolder> {
 
-    private List<LocationItem> locationList;
-    private OnItemClickListener onItemClickListener;
+    private List<LocationItem> locationItems;
+    private OnLocationClickListener onLocationClickListener;
+    private Context context;
+    private FirebaseFirestore db;
 
-    public LocationAdapter(List<LocationItem> locationList, OnItemClickListener onItemClickListener) {
-        this.locationList = locationList;
-        this.onItemClickListener = onItemClickListener;
+    public interface OnLocationClickListener {
+        void onLocationClicked(LocationItem locationItem);
     }
 
-    @NonNull
-    @Override
-    public LocationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.location_item, parent, false);
-        return new LocationViewHolder(view);
+    public LocationAdapter(List<LocationItem> locationItems, OnLocationClickListener onLocationClickListener, Context context) {
+        this.locationItems = locationItems;
+        this.onLocationClickListener = onLocationClickListener;
+        this.context = context;
+        db = FirebaseFirestore.getInstance();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LocationViewHolder holder, int position) {
-        LocationItem locationItem = locationList.get(position);
-        holder.locationDetails.setText("User ID: " + locationItem.getUserID() + "\n" +
-                "Latitude: " + locationItem.getLatitude() + "\n" +
-                "Longitude: " + locationItem.getLongitude() + "\n" +
-                "Uploaded at: " + locationItem.getTimestamp());
+    public LocationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // Inflate the layout for each location item
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.location_item, parent, false);
+        return new LocationViewHolder(itemView);
+    }
 
-        // Handle item click
-        holder.itemView.setOnClickListener(v -> onItemClickListener.onItemClick(locationItem));
+    @Override
+    public void onBindViewHolder(LocationViewHolder holder, int position) {
+        LocationItem locationItem = locationItems.get(position);
 
-        // Handle delete button click
+        // Set data to views
+        holder.userIDTextView.setText("User: " + locationItem.getUserID());
+        holder.latitudeTextView.setText("Latitude: " + locationItem.getLatitude());
+        holder.longitudeTextView.setText("Longitude: " + locationItem.getLongitude());
+        holder.timestampTextView.setText("Timestamp: " + locationItem.getTimestamp());
+
+        // Get current location
+        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(context);
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(location -> {
+                    if (location != null) {
+                        double myLatitude = location.getLatitude();
+                        double myLongitude = location.getLongitude();
+
+                        // Calculate the distance
+                        double distance = LocationUtils.calculateDistance(
+                                myLatitude, myLongitude,
+                                locationItem.getLatitude(), locationItem.getLongitude()
+                        );
+
+                        // Display the distance
+                        holder.distanceTextView.setText("Distance: " + String.format("%.2f", distance) + " km");
+                    }
+                });
+
+        // Set click listener for the map button
+        holder.viewOnMapButton.setOnClickListener(v -> onLocationClickListener.onLocationClicked(locationItem));
+
+        // Set click listener for the delete button
         holder.deleteButton.setOnClickListener(v -> {
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            // Use the userID as the document ID
-            String userID = locationItem.getUserID();
-
-            db.collection("users").document(userID)
+            // Delete location from Firestore
+            db.collection("users").document(locationItem.getUserID())
                     .delete()
                     .addOnSuccessListener(aVoid -> {
-                        // Remove from the local list
-                        locationList.remove(position);
+                        // Remove the item from the list and notify the adapter
+                        locationItems.remove(position);
                         notifyItemRemoved(position);
-                        notifyItemRangeChanged(position, locationList.size());
-                        Toast.makeText(holder.itemView.getContext(), "Location deleted for User ID: " + userID, Toast.LENGTH_SHORT).show();
                     })
-                    .addOnFailureListener(e ->
-                            Toast.makeText(holder.itemView.getContext(), "Failed to delete: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                    .addOnFailureListener(e -> {
+                        // Show an error message
+                        Toast.makeText(context, "Failed to delete location: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    });
         });
     }
 
     @Override
     public int getItemCount() {
-        return locationList.size();
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(LocationItem locationItem);
+        return locationItems.size();
     }
 
     public static class LocationViewHolder extends RecyclerView.ViewHolder {
-        TextView locationDetails;
+
+        TextView userIDTextView;
+        TextView latitudeTextView;
+        TextView longitudeTextView;
+        TextView timestampTextView;
+        TextView distanceTextView;
+        Button viewOnMapButton;
         Button deleteButton;
 
         public LocationViewHolder(View itemView) {
             super(itemView);
-            locationDetails = itemView.findViewById(R.id.locationDetails);
-            deleteButton = itemView.findViewById(R.id.deleteButton);
+
+            // Initialize views
+            userIDTextView = itemView.findViewById(R.id.userIDTextView);
+            latitudeTextView = itemView.findViewById(R.id.latitudeTextView);
+            longitudeTextView = itemView.findViewById(R.id.longitudeTextView);
+            timestampTextView = itemView.findViewById(R.id.timestampTextView);
+            distanceTextView = itemView.findViewById(R.id.distanceTextView);
+            viewOnMapButton = itemView.findViewById(R.id.viewOnMapButton);
+            deleteButton = itemView.findViewById(R.id.deleteButton); // Initialize delete button
         }
     }
 }

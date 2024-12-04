@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:allowBackup="true"
@@ -17,37 +17,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BinSOS"
         tools:targetApi="31">
+
+        <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".Locations">
-            <!-- You can add other configurations here if needed -->
-        </activity>
-        <activity android:name=".LocationItem">
-            <!-- You can add other configurations here if needed -->
-        </activity>
-        <activity android:name=".LocationAdapter">
-            <!-- You can add other configurations here if needed -->
-        </activity>
-
-        <activity android:name=".FirstAidActivity">
-            <!-- You can add other configurations here if needed -->
-        </activity>
-
+        <!-- Additional Activities -->
+        <activity android:name=".Locations" />
+        <activity android:name=".LocationItem" />
+        <activity android:name=".LocationAdapter" />
+        <activity android:name=".FirstAidActivity" />
+        <activity android:name=".LocationUtils" />
+        <activity android:name=".FloodSurvivalActivity" />
         <activity android:name=".BleedingWoundsActivity" />
         <activity android:name=".BreathingAndHeartActivity" />
         <activity android:name=".BurnsActivity" />
         <activity android:name=".InjuriesAndEmergenciesActivity" />
-
-
-
     </application>
-
 </manifest>

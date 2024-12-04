@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class BreathingAndHeartActivity extends AppCompatActivity {
 
     @Override
@@ -15,9 +17,11 @@ public class BreathingAndHeartActivity extends AppCompatActivity {
 
         // Find the Call for Help button
         Button callForHelpButton = findViewById(R.id.callForHelpButton);
+        FloatingActionButton backBtn = findViewById(R.id.backBtn);
 
         // Set click listener for the button
         callForHelpButton.setOnClickListener(v -> callForHelp());
+        backBtn.setOnClickListener(v -> finish());
     }
 
     // Method to call a specific emergency number

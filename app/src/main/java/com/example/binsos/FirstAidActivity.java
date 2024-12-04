@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class FirstAidActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_aid);
+
+        FloatingActionButton backBtn = findViewById(R.id.backBtn);
 
         // Get references to the tiles
         LinearLayout bleedingTile = findViewById(R.id.bleedingTile);
@@ -23,6 +27,7 @@ public class FirstAidActivity extends AppCompatActivity {
         breathingTile.setOnClickListener(v -> navigateToBreathingAndHeart());
         burnsTile.setOnClickListener(v -> navigateToBurns());
         injuriesTile.setOnClickListener(v -> navigateToInjuriesAndEmergencies());
+        backBtn.setOnClickListener(v -> finish());
     }
 
     private void navigateToBleedingWounds() {

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_USER_ID = "userID";
 
     private ImageButton shareLocationBtn,firstAidBtn, rainBtn;
-    private Button locationBtn;
+    private Button locationBtn, earthquakeBtn;
     private FusedLocationProviderClient fusedLocationClient;
     private FirebaseFirestore db;
     private ActivityResultLauncher<String[]> locationPermissionRequest;
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         locationBtn = findViewById(R.id.locationBtn);
         firstAidBtn = findViewById(R.id.firstAidBtn);
         rainBtn = findViewById(R.id.rainBtn);
+        earthquakeBtn = findViewById(R.id.earthquakeBtn);
 
 
         // Retrieve or generate a unique user ID
@@ -88,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
 
         rainBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, FloodSurvivalActivity.class);
+            startActivity(intent);
+        });
+
+        earthquakeBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, EarthquakeSurvivalActivity.class);
             startActivity(intent);
         });
 

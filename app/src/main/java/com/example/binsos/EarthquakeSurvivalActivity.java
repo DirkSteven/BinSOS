@@ -5,6 +5,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class EarthquakeSurvivalActivity extends AppCompatActivity {
 
     // Declare UI components
@@ -13,6 +15,7 @@ public class EarthquakeSurvivalActivity extends AppCompatActivity {
     private TextView sectionPrepareTitle, prepareDescription;
     private TextView sectionStaySafeTitle, staySafeDescription;
     private TextView sectionRecoverTitle, recoverDescription;
+    private FloatingActionButton backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class EarthquakeSurvivalActivity extends AppCompatActivity {
 
         // Set initial data
         initializeContent();
+        backBtn.setOnClickListener(v -> finish());
     }
 
     private void initializeUI() {
@@ -42,6 +46,7 @@ public class EarthquakeSurvivalActivity extends AppCompatActivity {
         sectionRecoverTitle = findViewById(R.id.sectionRecoverTitle);
         recoverImage = findViewById(R.id.recoverImage);
         recoverDescription = findViewById(R.id.recoverDescription);
+        backBtn = findViewById(R.id.backBtn);
     }
 
     private void initializeContent() {

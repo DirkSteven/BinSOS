@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#4E3C3C"
+    android:background="#F2F4F1 "
     android:id="@+id/main">
 
     <LinearLayout
@@ -21,9 +22,6 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <!-- Red Button 1 (top left) -->
-
-<!--            First Aid-->
             <ImageButton
                 android:id="@+id/firstAidBtn"
                 android:layout_width="match_parent"
@@ -36,9 +34,6 @@
                 android:padding="16dp"
                 android:layout_margin="12dp"/>
 
-            <!-- Red Button 2 (bottom left) -->
-
-<!--            Flooding typhoon-->
             <ImageButton
                 android:id="@+id/rainBtn"
                 android:layout_width="match_parent"
@@ -52,7 +47,7 @@
                 android:src="@drawable/firstaid" />
         </LinearLayout>
 
-        <!-- Purple Button 1 (top right) -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -95,28 +90,32 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/locationBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:background="@drawable/rounded_btn"
             android:gravity="center"
             android:padding="12dp"
-            android:text="Others Location"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:text="Others' Location"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:backgroundTint="#1E88E5"
+            app:cornerRadius="16dp" />
 
-        <Button
+
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/helpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:background="@drawable/rounded_btn"
             android:gravity="center"
             android:padding="12dp"
-            android:text="Call for help"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:text="CALL FOR HELP"
+            android:backgroundTint="#800020 "
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:cornerRadius="16dp"/>
     </LinearLayout>
 </LinearLayout>

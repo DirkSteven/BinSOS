@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -26,6 +27,7 @@ public class Locations extends AppCompatActivity {
     private List<LocationItem> locationItems;
     private Handler handler;
     private Runnable updateTask;
+    private FloatingActionButton backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class Locations extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        backBtn = findViewById(R.id.backBtn);
+
         // Setup Handler for periodic updates
         handler = new Handler();
         updateTask = new Runnable() {
@@ -54,6 +58,8 @@ public class Locations extends AppCompatActivity {
 
         // Start periodic updates
         startPeriodicUpdates();
+
+        backBtn.setOnClickListener(v -> finish());
     }
 
     @Override

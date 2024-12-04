@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_menu_arrow_back"
+        android:tint="@null"
+        android:contentDescription="Back Button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+
     <!-- Bleeding and Wounds -->
     <LinearLayout
         android:id="@+id/bleedingTile"
@@ -15,7 +26,7 @@
         android:padding="8dp"
         android:background="@drawable/tile_background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backBtn"
         app:layout_constraintEnd_toStartOf="@+id/breathingTile"
         app:layout_constraintBottom_toTopOf="@+id/burnsTile">
 
@@ -43,7 +54,7 @@
         android:padding="8dp"
         android:background="@drawable/tile_background"
         app:layout_constraintStart_toEndOf="@+id/bleedingTile"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/burnsTile">
 

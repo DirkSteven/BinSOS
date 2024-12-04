@@ -38,6 +38,7 @@
         <activity android:name=".BleedingWoundsActivity" />
         <activity android:name=".BreathingAndHeartActivity" />
         <activity android:name=".BurnsActivity" />
+        <activity android:name=".EarthquakeSurvivalActivity" />
         <activity android:name=".InjuriesAndEmergenciesActivity" />
     </application>
 </manifest>

@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "AppPrefs";
     private static final String KEY_USER_ID = "userID";
 
-    private ImageButton shareLocationBtn,firstAidBtn, rainBtn;
-    private Button locationBtn, earthquakeBtn;
+    private ImageButton shareLocationBtn,firstAidBtn, rainBtn, earthquakeBtn;
+    private Button locationBtn;
     private FusedLocationProviderClient fusedLocationClient;
     private FirebaseFirestore db;
     private ActivityResultLauncher<String[]> locationPermissionRequest;

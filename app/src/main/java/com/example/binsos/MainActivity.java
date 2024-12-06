@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -32,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_USER_ID = "userID";
 
     private ImageButton shareLocationBtn,firstAidBtn, rainBtn, earthquakeBtn;
-    private MaterialButton locationBtn;
+    private MaterialButton locationBtn, helpBtn;
+    private MediaPlayer mediaPlayer;
     private FusedLocationProviderClient fusedLocationClient;
     private FirebaseFirestore db;
     private ActivityResultLauncher<String[]> locationPermissionRequest;
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         firstAidBtn = findViewById(R.id.firstAidBtn);
         rainBtn = findViewById(R.id.rainBtn);
         earthquakeBtn = findViewById(R.id.earthquakeBtn);
-
+        helpBtn = findViewById(R.id.helpBtn);
 
         // Retrieve or generate a unique user ID
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -116,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        helpBtn.setOnClickListener(v -> triggerHelpAlert());
 
         locationBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, Locations.class);
@@ -157,5 +159,20 @@ public class MainActivity extends AppCompatActivity {
                 .addOnFailureListener(e ->
                         Toast.makeText(this, "Failed to share location: " + e.getMessage(), Toast.LENGTH_SHORT).show()
                 );
+    }
+
+    private void triggerHelpAlert() {
+        // Play a loud sound
+        playLoudSound();
+
+        // Show a toast message to the user
+        Toast.makeText(this, "Help Alert Triggered!", Toast.LENGTH_LONG).show();
+
+    }
+
+    private void playLoudSound() {
+//        mediaPlayer = MediaPlayer.create(this, R.raw.loud_alert_sound);  // You should have an alert sound in `res/raw/loud_alert_sound.mp3`
+        mediaPlayer.setVolume(1.0f, 1.0f);
+        mediaPlayer.start();
     }
 }

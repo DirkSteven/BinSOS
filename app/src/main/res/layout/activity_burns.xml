@@ -55,8 +55,8 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_bleeding"
-                    android:contentDescription="Stop the Bleeding Icon"/>
+                    android:src="@drawable/burning"
+                    android:contentDescription="Stop the Burning Icon"/>
 
                 <TextView
                     android:layout_width="match_parent"

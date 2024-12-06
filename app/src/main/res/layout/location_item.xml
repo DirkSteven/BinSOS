@@ -2,19 +2,19 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="4dp"
     android:layout_margin="8dp"
-    android:radius="12dp"
-    android:backgroundTint="@android:color/white"> <!-- White background for the CardView -->
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@android:color/white">
 
     <LinearLayout
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"> <!-- White background for the LinearLayout -->
+        android:background="@android:color/white">
 
-        <!-- User Information Section -->
         <TextView
             android:id="@+id/userIDTextView"
             android:layout_width="wrap_content"
@@ -22,7 +22,7 @@
             android:text="User ID"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:textColor="@android:color/black" /> <!-- Black text color -->
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/latitudeTextView"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="Latitude"
             android:textSize="14sp"
-            android:textColor="@android:color/black" /> <!-- Black text color -->
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/longitudeTextView"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Longitude"
             android:textSize="14sp"
-            android:textColor="@android:color/black" /> <!-- Black text color -->
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/timestampTextView"
@@ -72,9 +72,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="View on Map"
-                android:textSize="12sp"
-                android:textColor="@android:color/white"
-                android:backgroundTint="@android:color/holo_blue_light"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:backgroundTint="#FFD93E"
                 android:padding="8dp"
                 android:layout_marginEnd="8dp"
                 android:gravity="center"/>
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Delete"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/white"
                 android:backgroundTint="@android:color/holo_red_light"
                 android:padding="8dp"

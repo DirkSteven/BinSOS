@@ -22,7 +22,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textSize="24sp"
-            android:textColor="#000000"/>
+            android:textColor="#000000"
+            android:fontFamily="sans-serif-black"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -68,7 +69,7 @@
             android:scaleType="fitCenter"
             android:layout_below="@id/firstAidBtn"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="25dp"/>
+            android:layout_marginTop="20dp"/>
 
         <ImageButton
             android:id="@+id/shareLocationBtn"
@@ -81,7 +82,7 @@
             android:scaleType="fitCenter"
             android:layout_below="@id/earthquakeBtn"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="25dp"/>
+            android:layout_marginTop="20dp"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -95,9 +96,9 @@
             android:id="@+id/locationBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="5dp"
             android:gravity="center"
-            android:padding="12dp"
+            android:padding="16dp"
             android:text="Others' Location"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -110,9 +111,9 @@
             android:id="@+id/helpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="5dp"
             android:gravity="center"
-            android:padding="12dp"
+            android:padding="16dp"
             android:text="CALL FOR HELP"
             android:backgroundTint="#800020 "
             android:textColor="#ffffff"

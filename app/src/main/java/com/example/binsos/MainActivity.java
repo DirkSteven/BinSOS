@@ -18,6 +18,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.FirebaseApp;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_USER_ID = "userID";
 
     private ImageButton shareLocationBtn,firstAidBtn, rainBtn, earthquakeBtn;
-    private Button locationBtn;
+    private MaterialButton locationBtn;
     private FusedLocationProviderClient fusedLocationClient;
     private FirebaseFirestore db;
     private ActivityResultLauncher<String[]> locationPermissionRequest;

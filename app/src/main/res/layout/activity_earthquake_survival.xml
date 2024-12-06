@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_menu_arrow_back"
             android:tint="@null"
+            android:backgroundTint="#f4b3b3"
             android:contentDescription="Back Button"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"

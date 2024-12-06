@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_menu_arrow_back"
         android:tint="@null"
+        android:backgroundTint="#f4b3b3"
         android:contentDescription="Back Button"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,20 +141,21 @@
     </androidx.core.widget.NestedScrollView>
 
     <!-- Call for Help Button -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/callForHelpButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Call for Help"
-        android:textSize="18sp"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/button_gradient"
+        android:backgroundTint="#800020 "
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:cornerRadius="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:padding="12dp"/>
+        android:padding="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -62,7 +62,7 @@ public class FloodSurvivalActivity extends AppCompatActivity {
                 prepareImage,
                 prepareDescription,
                 R.string.prepare_title,
-                R.drawable.prepare,
+                R.drawable.prepare_rain,
                 R.string.prepare_image_content_desc,
                 R.string.prepare_description);
 

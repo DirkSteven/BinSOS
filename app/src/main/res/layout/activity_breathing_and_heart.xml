@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bleeding and Heart First Aid"
+                android:text="Breathing and Heart First Aid"
                 android:textSize="28sp"
                 android:textColor="#C62828"
                 android:textStyle="bold"
@@ -54,8 +54,8 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_bleeding"
-                    android:contentDescription="Stop the Bleeding Icon"/>
+                    android:src="@drawable/lung"
+                    android:contentDescription="breathing"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_clean_wound"
+                    android:src="@drawable/ic_call"
                     android:contentDescription="Clean the Wound Icon"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -119,7 +119,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_cover_wound"
+                    android:src="@drawable/ic_cpr"
                     android:contentDescription="Cover the Wound Icon"/>
                 <TextView
                     android:layout_width="match_parent"

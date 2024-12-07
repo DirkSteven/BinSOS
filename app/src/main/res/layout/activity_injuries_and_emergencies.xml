@@ -55,7 +55,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_bleeding"
+                    android:src="@drawable/ic_clean_wound"
                     android:contentDescription="Stop the Bleeding Icon"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -88,7 +88,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_clean_wound"
+                    android:src="@drawable/ic_bleeding"
                     android:contentDescription="Clean the Wound Icon"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -119,7 +119,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_cover_wound"
+                    android:src="@drawable/medic"
                     android:contentDescription="Cover the Wound Icon"/>
 
                 <TextView

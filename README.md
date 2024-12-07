@@ -1,5 +1,5 @@
 <p align = "center">
-  <img src = "logobins.png" width = "300" height = "300" alt="LogoInsert"> 
+  <img src = "logobins.jpg" width = "300" height = "300" alt="LogoInsert"> 
 </p>
 
 

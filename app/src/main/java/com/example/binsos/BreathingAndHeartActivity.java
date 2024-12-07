@@ -26,7 +26,7 @@ public class BreathingAndHeartActivity extends AppCompatActivity {
 
     // Method to call a specific emergency number
     private void callForHelp() {
-        String emergencyNumber = "911"; // You can replace this with any emergency number
+        String emergencyNumber = "911";
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + emergencyNumber));
         startActivity(intent);

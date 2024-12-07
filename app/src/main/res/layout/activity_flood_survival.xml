@@ -26,8 +26,9 @@
             android:id="@+id/floodMainImage"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/siren"
+            android:scaleType="matrix"
+            android:src="@drawable/typhoonguide"
+            android:background="#545454"
             android:contentDescription="Main flood survival guide image" />
 
         <TextView

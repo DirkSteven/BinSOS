@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private ActivityResultLauncher<String[]> locationPermissionRequest;
     private String userID;
+
+    private boolean isPlaying = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +146,55 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void triggerHelpAlert() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // Request permissions
+            locationPermissionRequest.launch(new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+            });
+        } else {
+            // Permissions are already granted
+            fetchAndShareLocation();
+        }
+        if (isPlaying) {
+            stopLoudSound();
+            Toast.makeText(this, "Help Alert Stopped!", Toast.LENGTH_SHORT).show();
+        } else {
+            playLoudSound();
+            Toast.makeText(this, "Help Alert Triggered!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void playLoudSound() {
+        // Set the volume to maximum
+        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        if (audioManager != null) {
+            int maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, maxVolume, 0);
+        }
+
+        // Play the SOS sound
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(this, R.raw.sos_sound); // Ensure you have an audio file named sos_sound in res/raw
+            mediaPlayer.setOnCompletionListener(mp -> stopLoudSound());
+        }
+        mediaPlayer.start();
+        isPlaying = true;
+    }
+
+
+    private void stopLoudSound() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+        isPlaying = false;
+    }
+
+
     private void shareLocation(Location location) {
         Map<String, Object> locationData = new HashMap<>();
         locationData.put("latitude", location.getLatitude());
@@ -161,18 +213,5 @@ public class MainActivity extends AppCompatActivity {
                 );
     }
 
-    private void triggerHelpAlert() {
-        // Play a loud sound
-        playLoudSound();
 
-        // Show a toast message to the user
-        Toast.makeText(this, "Help Alert Triggered!", Toast.LENGTH_LONG).show();
-
-    }
-
-    private void playLoudSound() {
-//        mediaPlayer = MediaPlayer.create(this, R.raw.loud_alert_sound);  // You should have an alert sound in `res/raw/loud_alert_sound.mp3`
-        mediaPlayer.setVolume(1.0f, 1.0f);
-        mediaPlayer.start();
-    }
 }

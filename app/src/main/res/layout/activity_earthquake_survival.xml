@@ -28,8 +28,9 @@
             android:id="@+id/earthquakeMainImage"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/earthquake"
+            android:scaleType="matrix"
+            android:src="@drawable/earthquakeguide"
+            android:background="#545454"
             android:contentDescription="Main earthquake survival guide image" />
 
         <TextView
@@ -129,7 +130,7 @@
             android:id="@+id/recoverImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:src="@drawable/recover_earthquake"
             android:contentDescription="Image for recovering after the earthquake" />
 

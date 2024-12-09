@@ -104,7 +104,7 @@ To start the application, build and run the folder in the Android Studio IDE.
 
 | Name | Role | E-mail |
 | --- | --- | --- |
-| <a href = "https://github.com/DirkSteven">Vince Jerico Abella</a> | Project Manager| binsbakla@gmail.com | 
+| <a href = "https://github.com/DirkSteven">Vince Jerico Abella</a> | Project Manager| vinceabella07@gmail.com | 
 | <a href = "https://github.com/LanceAndrei04">Dirk Steven E. Javier </a>| Developer  | dirkjaviermvp@gmail.com |
 | <a href = "https://github.com/AeronEvangelista">Ciavel Anby P. Montenegro </a>| Developer | m.cap1218@gmail.com |
 | <a href = "https://github.com/AeronEvangelista">John Benedict A. Tolentino </a>| Developer | jbtolentino.827.04@gmail.com |
